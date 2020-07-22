@@ -9,24 +9,24 @@ const sequelize = require('./config/connection');
 
 let secret;
 process.env.JAWSDB_URL
-  ? (secret = process.env.JAWSDB_URL)
-  : (secret = process.env.SESS_SECRET);
+	? (secret = process.env.JAWSDB_URL)
+	: (secret = process.env.SESS_SECRET);
 
 const sess = {
-    secret: secret,
-    cookie: {
-        secure: true,
-        httpOnly: true,
-        sameSite: true,
-        maxAge: 10 * 60 * 1000
-    },
-    rolling: true,
-    resave: false,
-    saveUninitialized: true,
-    store: new SequelizeStore({
-        db: sequelize
-    }),
-}
+	secret: secret,
+	cookie: {
+		secure: true,
+		httpOnly: true,
+		sameSite: true,
+		maxAge: 10 * 60 * 1000,
+	},
+	rolling: true,
+	resave: false,
+	saveUninitialized: true,
+	store: new SequelizeStore({
+		db: sequelize,
+	}),
+};
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -36,7 +36,7 @@ const hbs = exphbs.create({});
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 
-app.use(session(sess))
+app.use(session(sess));
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -45,5 +45,5 @@ app.use(express.static(path.join(__dirname, 'public')));
 //app.use(routes);
 
 sequelize.sync({ force: false }).then(() => {
-  app.listen(PORT, () => console.log(`Now listening on port ${PORT}!`));
+	app.listen(PORT, () => console.log(`Now listening on port ${PORT}!`));
 });

@@ -1,6 +1,7 @@
 const { Model, DataTypes } = require('sequelize');
 const bcrypt = require('bcrypt');
 const sequelize = require('../config/connection');
+const { beforeBulkCreate } = require('./Post');
 
 class User extends Model {}
 
@@ -35,6 +36,13 @@ User.init(
 		underscored: true,
 		modelName: 'user',
 		hooks: {
+			async beforeBulkCreate(newUserData) {
+				newUserData = newUserData.map(async (user) => {
+					user.password = await bcrypt.hash(user.password, 10);
+					return user;
+				});
+				return newUserData;
+			},
 			async beforeCreate(newUserData) {
 				newUserData.password = await bcrypt.hash(
 					newUserData.password,
