@@ -7,9 +7,9 @@
     "test": "jest",
     "watch": "nodemon server.js",
     "start": "node server.js",
-    "db": "mysql --login-path=root",
+    "db": "mysql --login-path=root tech_blog_db",
     "migrate": "npm run db < db/schema.sql",
-    "seed": "npm run db < db/seed.sql"
+    "seed": "node db/seeds"
   },
   "repository": {
     "type": "git",
