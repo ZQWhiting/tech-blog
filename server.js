@@ -14,12 +14,18 @@ process.env.JAWSDB_URL
 
 const sess = {
     secret: secret,
-    cookie: {},
+    cookie: {
+        secure: true,
+        httpOnly: true,
+        sameSite: true,
+        maxAge: 10 * 60 * 1000
+    },
+    rolling: true,
     resave: false,
     saveUninitialized: true,
     store: new SequelizeStore({
         db: sequelize
-    })
+    }),
 }
 
 const app = express();
