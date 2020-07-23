@@ -1,0 +1,20 @@
+{{> post-info post}}
+<ol>
+    {{#each post.comments as |comment|}}
+    <li>
+        {{> comments comment}}
+    </li>
+    {{/each}}
+</ol>
+<div>
+    <form>
+        <div></div>
+        <div>
+            <label for="comment">Comment</label>
+            <textarea name="comment" id="comment" cols="30" rows="10"></textarea>
+        </div>
+        <div>
+            <button type="submit">Submit</button>
+        </div>
+    </form>
+</div>
