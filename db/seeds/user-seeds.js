@@ -23,7 +23,6 @@ const userData = [
 	},
 ];
 
-//const seedUsers = async () => User.bulkCreate(userData);
-const seedUsers = async () => User.create(userData[0]);
+const seedUsers = async () => User.bulkCreate(userData);
 
 module.exports = seedUsers;
