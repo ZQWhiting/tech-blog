@@ -1,0 +1,142 @@
+* {
+	margin: 0;
+	padding: 0;
+	font-family: Arial, Helvetica, sans-serif;
+	box-sizing: border-box;
+	line-height: 1.25;
+}
+
+:root {
+	--main-dark-color: #231111;
+	--main-light-color: #d8ead2;
+}
+
+.btn-no-style {
+	background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+}
+
+.btn {
+	background: grey;
+	color: white;
+	border: none;
+	width: 100%;
+	padding: 7px;
+	border-radius: 5px;
+	margin: 10px 0;
+}
+
+.btn-new-post-wrapper {
+	flex: 100%;
+	align-self: flex-end;
+	display: flex;
+	justify-content: center;
+}
+
+.btn-new-post {
+	background: var(--main-dark-color);
+	color: var(--main-light-color);
+	border: none;
+	padding: 10px 15px;
+	border-radius: 5px;
+	margin: 10px 0;
+	justify-self: center;
+	font-size: 1em;
+}
+
+textarea {
+	font-family: monospace;
+	width: 100%;
+	resize: none;
+	padding: 10px;
+}
+
+textarea:focus {
+	outline: #79abe0 auto 1px;
+	outline-offset: 1px;
+}
+
+header {
+	background: var(--main-dark-color);
+	color: var(--main-light-color);
+	padding: 30px;
+	min-height: 20vh;
+}
+
+header div {
+	color: var(--main-dark-color);
+	background: var(--main-light-color);
+	padding: 10px 20px;
+	border-radius: 10px;
+	box-shadow: 5px 5px #a7a7a7;
+	display: inline-block;
+}
+
+nav {
+	display: flex;
+	justify-content: space-between;
+	width: 350px;
+	margin-bottom: 20px;
+}
+
+main {
+	padding: 30px 30px 10px 30px;
+	background: var(--main-light-color);
+	min-height: 80vh;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.item {
+	flex: 100%;
+	list-style: none;
+	margin-bottom: 20px;
+	border: 3px solid var(--main-dark-color);
+}
+
+.item-no-style {
+	flex: 100%;
+}
+
+.item-header {
+	color: var(--main-light-color);
+	background: var(--main-dark-color);
+	padding: 15px 20px;
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-end;
+}
+
+.item-header span {
+	text-align: right;
+}
+
+.item-body {
+	padding: 15px 20px;
+}
+
+.item-body label {
+	display: block;
+	margin: 5px 0;
+}
+
+.item-body input {
+	border: none;
+	width: 100%;
+	padding: 10px;
+	margin-bottom: 5px;
+}
+
+form .btn-no-style {
+	color: blue;
+}

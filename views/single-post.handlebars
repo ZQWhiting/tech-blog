@@ -1,20 +1,22 @@
-{{> post-info post}}
+<div class="item">
+    {{> post-info post}}
+</div>
 <ol>
     {{#each post.comments as |comment|}}
-    <li>
+    <li class="item">
         {{> comments comment}}
     </li>
     {{/each}}
 </ol>
-<div>
-    <form>
-        <div></div>
+<div class="item">
+    <div class="item-header"></div>
+    <form class="item-body">
         <div>
             <label for="comment">Comment</label>
-            <textarea name="comment" id="comment" cols="30" rows="10"></textarea>
+            <textarea name="comment" id="comment" rows="5"></textarea>
         </div>
         <div>
-            <button type="submit">Submit</button>
+            <button type="submit" class="btn">Submit</button>
         </div>
     </form>
 </div>
