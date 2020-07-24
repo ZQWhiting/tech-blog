@@ -1,26 +1,32 @@
-<div class="item">
-    {{> post-info post}}
-</div>
-<ol>
-    {{#each post.comments as |comment|}}
-    <li class="item">
-        {{> comments comment}}
-    </li>
-    {{/each}}
-</ol>
+<div class='wrapper'>
+    <div class="item">
+        {{> post-info post}}
+    </div>
 
-{{#if loggedIn}}
-<div class="item">
-    <div class="item-header"></div>
-    <form class="item-body" id='comment-form'>
-        <div>
-            <label for="comment">Comment</label>
-            <textarea name="comment" id="comment" rows="5"></textarea>
-        </div>
-        <div class='wrapper'>
-            <button type="submit" class="btn">Submit</button>
-        </div>
-    </form>
+    {{#if post.comments}}
+    <ol>
+        {{#each post.comments as |comment|}}
+        <li class="item">
+            {{> comments comment}}
+        </li>
+        {{/each}}
+    </ol>
+    {{/if}}
+
+    {{#if loggedIn}}
+    <div class="item">
+        <div class="item-header"></div>
+        <form class="item-body" id='comment-form'>
+            <div>
+                <label for="comment">Comment</label>
+                <textarea name="comment" id="comment" rows="5"></textarea>
+            </div>
+            <div class='wrapper'>
+                <button type="submit" class="btn">Submit</button>
+            </div>
+        </form>
+    </div>
+
 </div>
 
 <script src="/javascript/comment.js"></script>
