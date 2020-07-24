@@ -11,6 +11,10 @@
 	--main-light-color: #d8ead2;
 }
 
+.hidden {
+	display: none;
+}
+
 .btn-no-style {
 	background: none;
 	color: inherit;
@@ -89,10 +93,12 @@ header div {
 }
 
 nav {
-	display: flex;
-	justify-content: space-between;
-	width: 350px;
 	margin-bottom: 20px;
+}
+
+nav a,
+nav button {
+	margin-right: 30px;
 }
 
 main {
@@ -101,6 +107,7 @@ main {
 	min-height: 80vh;
 	display: flex;
 	flex-wrap: wrap;
+	align-content: flex-start;
 }
 
 .item {

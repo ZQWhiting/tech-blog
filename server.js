@@ -16,9 +16,6 @@ process.env.JAWSDB_URL
 const sess = {
 	secret: secret,
 	cookie: {
-		secure: true,
-		httpOnly: true,
-		sameSite: true,
 		maxAge: 10 * 60 * 1000,
 	},
 	rolling: true,

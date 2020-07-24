@@ -2,6 +2,10 @@ const router = require('express').Router();
 const { Post, Comment, User } = require('../models');
 
 router.get('/', (req, res) => {
+	if (!req.session.loggedIn) {
+		res.redirect('/login');
+		return;
+	}
 	Post.findAll({
 		where: {},
 		attributes: ['id', 'title', 'post_text', 'created_at'],
@@ -13,15 +17,27 @@ router.get('/', (req, res) => {
 		],
 	}).then((dbPostData) => {
 		const posts = dbPostData.map((post) => post.get({ plain: true }));
-		res.render('dashboard', { posts, loggedIn: req.session.loggedIn });
+		res.render('dashboard', {
+			posts,
+			loggedIn: req.session.loggedIn,
+			dashboard: true,
+		});
 	});
 });
 
 router.get('/post', (req, res) => {
-	res.render('new-post');
+	if (!req.session.loggedIn) {
+		res.redirect('/login');
+		return;
+	}
+	res.render('new-post', { dashboard: true });
 });
 
 router.get('/edit/:id', (req, res) => {
+	if (!req.session.loggedIn) {
+		res.redirect('/login');
+		return;
+	}
 	Post.findOne({
 		where: {
 			id: req.params.id,
@@ -40,7 +56,11 @@ router.get('/edit/:id', (req, res) => {
 				return;
 			}
 			const post = dbPostData.get({ plain: true });
-			res.render('edit-post', { post, loggedIn: req.session.loggedIn });
+			res.render('edit-post', {
+				post,
+				loggedIn: req.session.loggedIn,
+				dashboard: true,
+			});
 		})
 		.catch((err) => {
 			console.log(err);
