@@ -42,19 +42,19 @@ a {
 	padding: 7px;
 	border-radius: 5px;
 	margin-bottom: 5px;
+	font-size: 105%;
 }
 
-.btn-new-post-wrapper {
+.new-post-wrapper {
 	flex: 100%;
 	align-self: flex-end;
 	display: flex;
 	justify-content: center;
 }
 
-.btn-new-post {
+.new-post {
 	background: var(--main-dark-color);
 	color: var(--main-light-color);
-	border: none;
 	padding: 10px 15px;
 	border-radius: 5px;
 	margin: 10px 0;
@@ -183,4 +183,9 @@ form .btn-no-style {
 
 ol {
 	flex: 100%;
+}
+
+.err404 {
+	flex: 100%;
+	font-size: 300%;
 }

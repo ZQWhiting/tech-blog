@@ -7,7 +7,9 @@ router.get('/', (req, res) => {
 		return;
 	}
 	Post.findAll({
-		where: {},
+		where: {
+			user_id: req.session.user_id,
+		},
 		attributes: ['id', 'title', 'post_text', 'created_at'],
 		include: [
 			{
@@ -30,7 +32,7 @@ router.get('/post', (req, res) => {
 		res.redirect('/login');
 		return;
 	}
-	res.render('new-post', { dashboard: true });
+	res.render('new-post', { loggedIn: req.session.loggedIn, dashboard: true });
 });
 
 router.get('/edit/:id', (req, res) => {
@@ -41,6 +43,7 @@ router.get('/edit/:id', (req, res) => {
 	Post.findOne({
 		where: {
 			id: req.params.id,
+			user_id: req.session.user_id,
 		},
 		attributes: ['id', 'post_text', 'title', 'created_at'],
 		include: [
@@ -52,7 +55,7 @@ router.get('/edit/:id', (req, res) => {
 	})
 		.then((dbPostData) => {
 			if (!dbPostData) {
-				res.status(404).json({ message: 'No post found with this id' });
+				res.redirect('/404');
 				return;
 			}
 			const post = dbPostData.get({ plain: true });
