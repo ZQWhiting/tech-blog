@@ -123,6 +123,9 @@ main {
 
 .item-header span {
 	text-align: right;
+	align-self: center;
+	font-size: 90%;
+	margin-left: 30px;
 }
 
 .item-body {
@@ -150,14 +153,16 @@ main {
 	color: lightgrey;
 	display: flex;
 	padding: 10px;
+	justify-content: space-between;
 }
 
 .item-short-title {
-	flex: 1 85%;
+	flex: 0 75%;
 }
 
 .item-short-meta {
 	flex: 0 15%;
+	align-self: center;
 }
 
 form .btn-no-style {
