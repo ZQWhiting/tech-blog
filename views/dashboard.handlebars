@@ -1,10 +1,10 @@
-<ol class="item-no-style">
+<ol>
     {{#each posts as |post|}}
-    <li>
-        <div>
+    <li class="item-short">
+        <a href='/dashboard/edit/{{id}}' class='item-short-title'>
             {{title}}
-        </div>
-        <div>
+        </a>
+        <div class='item-short-meta'>
             {{created_at}}
         </div>
     </li>

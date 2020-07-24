@@ -26,6 +26,10 @@ a {
 	text-decoration: none;
 }
 
+.wrapper {
+	margin-top: 10px;
+}
+
 .btn {
 	background: grey;
 	color: white;
@@ -33,7 +37,7 @@ a {
 	width: 100%;
 	padding: 7px;
 	border-radius: 5px;
-	margin: 10px 0;
+	margin-bottom: 5px;
 }
 
 .btn-new-post-wrapper {
@@ -59,9 +63,11 @@ textarea {
 	width: 100%;
 	resize: none;
 	padding: 10px;
+	border: none;
 }
 
-textarea:focus {
+textarea:focus,
+input:focus {
 	outline: #79abe0 auto 1px;
 	outline-offset: 1px;
 }
@@ -102,10 +108,7 @@ main {
 	list-style: none;
 	margin-bottom: 20px;
 	border: 3px solid var(--main-dark-color);
-}
-
-.item-no-style {
-	flex: 100%;
+	align-self: flex-start;
 }
 
 .item-header {
@@ -115,6 +118,7 @@ main {
 	display: flex;
 	justify-content: space-between;
 	align-items: flex-end;
+	font-weight: 700;
 }
 
 .item-header span {
@@ -137,6 +141,34 @@ main {
 	margin-bottom: 5px;
 }
 
+.item-short {
+	flex: 100%;
+	list-style: none;
+	background: grey;
+	margin-bottom: 20px;
+	border-radius: 10px;
+	color: lightgrey;
+	display: flex;
+	padding: 10px;
+}
+
+.item-short-title {
+	flex: 1 85%;
+}
+
+.item-short-meta {
+	flex: 0 15%;
+}
+
 form .btn-no-style {
 	color: blue;
+}
+
+.comment-text,
+.comment-meta {
+	margin: 30px 0px;
+}
+
+ol {
+	flex: 100%;
 }
