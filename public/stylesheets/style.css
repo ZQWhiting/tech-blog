@@ -170,6 +170,7 @@ main {
 .item-short-meta {
 	flex: 0 15%;
 	align-self: center;
+	text-align: right;
 }
 
 form .btn-no-style {
