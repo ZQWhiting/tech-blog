@@ -50,6 +50,8 @@ a {
 	align-self: flex-end;
 	display: flex;
 	justify-content: center;
+	position: sticky;
+	bottom: 0;
 }
 
 .new-post {
@@ -102,12 +104,12 @@ nav button {
 }
 
 main {
-	padding: 30px 30px 10px 30px;
+	padding: 30px 30px 0 30px;
 	background: var(--main-light-color);
 	min-height: 80vh;
 	display: flex;
 	flex-wrap: wrap;
-	align-content: flex-start;
+	align-items: flex-start;
 }
 
 .item {
