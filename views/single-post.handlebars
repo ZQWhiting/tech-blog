@@ -12,7 +12,7 @@
 {{#if loggedIn}}
 <div class="item">
     <div class="item-header"></div>
-    <form class="item-body">
+    <form class="item-body" id='comment-form'>
         <div>
             <label for="comment">Comment</label>
             <textarea name="comment" id="comment" rows="5"></textarea>
@@ -22,4 +22,6 @@
         </div>
     </form>
 </div>
+
+<script src="/javascript/comment.js"></script>
 {{/if}}

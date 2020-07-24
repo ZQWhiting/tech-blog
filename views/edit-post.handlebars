@@ -2,18 +2,21 @@
     <div class='item-header'>
         Edit Post
     </div>
-    <div class='item-body'>
+    <form class='item-body' id='edit-post-form'>
         <div>
-            <label for="edit-title">Title</label>
-            <input type="text" id="edit-title" value="{{post.title}}">
+            <label for="post-title">Title</label>
+            <input type="text" id="post-title" value="{{post.title}}">
         </div>
         <div>
-            <label for="edit-content">Content</label>
-            <textarea name="edit-content" id="edit-content" cols="30" rows="10">{{post.post_text}}</textarea>
+            <label for="post-text">Content</label>
+            <textarea name="post-text" id="post-text" cols="30" rows="10">{{post.post_text}}</textarea>
         </div>
         <div class='wrapper'>
             <button type="submit" class='btn'>Update Post</button>
             <button id="delete-post" class='btn'>Delete</button>
         </div>
-    </div>
+    </form>
 </div>
+
+<script src="/javascript/edit-post.js"></script>
+<script src="/javascript/delete-post.js"></script>
