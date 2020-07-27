@@ -65,6 +65,8 @@ SESS_SECRET='random secret'
 6. In the home menu, click on a post title to see and add comments.
 7. Click the logout button in the navigation to logout of your account.
 
+![The Tech Blog](./docs/the_tech_blog.gif)
+
 <a name='license'></a>
 
 ## License
