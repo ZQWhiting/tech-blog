@@ -46,8 +46,6 @@ a {
 }
 
 .new-post-wrapper {
-	flex: 100%;
-	align-self: flex-end;
 	display: flex;
 	justify-content: center;
 	position: sticky;
