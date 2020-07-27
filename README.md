@@ -1,4 +1,4 @@
-# E-commerce Back End
+# The Tech Blog
 
 ![license](https://img.shields.io/badge/License-MIT-blue)
 
